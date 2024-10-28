@@ -1,0 +1,42 @@
+#include <stdio.h>     // Bibliotecas
+#include <string.h>    
+#include <locale.h>     
+
+// Definição da estrutura 'Carro'
+typedef struct {
+    char modelo[50]; 
+    int ano;         
+    double preco;    
+} Carro;
+
+// Função
+void modificarPreco(Carro *c, double novoPreco) {
+    c->preco = novoPreco; // altera o preço do carro
+
+// Função para imprimir
+void imprimirCarro(Carro *c) {
+    printf("Modelo: %s\n", c->modelo);  
+    printf("Ano: %d\n", c->ano);          
+    printf("Preço: R$ %.2lf\n", c->preco); 
+}
+
+// Função principal
+int main() {
+    setlocale(LC_ALL, "Portuguese"); // Define a localidade para exibir caracteres acentuados
+
+    Carro carrol; // Declara uma variável 'carrol' do tipo Carro
+    // Inicializa os atributos do carro
+    strcpy(carrol.modelo, "XyZ");     
+    carrol.ano = 2020;                 
+    carrol.preco = 90000.00;         
+
+    printf("Dados antes da modificação:\n"); // Exibe uma mensagem antes da modificação
+    imprimirCarro(&carrol); // Chama a função para imprimir os detalhes do carro
+
+    modificarPreco(&carrol, 115000.00); // Chama a função para modificar o preço do carro
+
+    printf("Dados após a modificação do preço:\n"); // Exibe uma mensagem após a modificação
+    imprimirCarro(&carrol); // Chama a função novamente para imprimir os detalhes do carro após a modificação
+
+    return 0; // Encerra o programa
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int multiplicarVetor(int vetor[], int tamanho) {
+    int multiplicacao = 1;
+    for (int i = 0; i < tamanho; i++) {
+        multiplicacao *= vetor[i];
+    }
+    return multiplicacao;
+}
+
+int main() {
+    int tamanho, resultado;
+
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tamanho);
+
+    int vetor[tamanho];
+
+    printf("Digite os valores do vetor:\n");
+    for (int i = 0; i < tamanho; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    resultado = multiplicarVetor(vetor, tamanho);
+
+    printf("O resultado da multiplicacao dos valores do vetor eh: %d\n", resultado);
+
+    return 0;
+}

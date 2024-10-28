@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+// Função para imprimir os números ímpares até um limite, pulando os múltiplos de 7
+void imprimir_impares(int limite) {
+    printf("Números ímpares até %d (exceto múltiplos de 7):\n", limite);
+    for (int i = 1; i <= limite; i += 2) {
+        if (i % 7 != 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int limite;
+
+    printf("Digite o limite: ");
+    scanf("%d", &limite);
+
+    imprimir_impares(limite);
+
+    return 0;
+}

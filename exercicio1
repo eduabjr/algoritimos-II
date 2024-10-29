@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int pontos[3][5];
+    int i, j, total, maiorTotal = 0, vencedor;
+
+    for (i = 0; i < 3; i++) {
+        total = 0;
+        for (j = 0; j < 5; j++) {
+            printf("Jogador %d, Jogo %d: ", i + 1, j + 1);
+            scanf("%d", &pontos[i][j]);
+            total += pontos[i][j];
+        }
+
+        if (total > maiorTotal) {
+            maiorTotal = total;
+            vencedor = i + 1;
+        }
+    }
+
+    printf("O vencedor é o jogador %d\n", vencedor);
+
+    return 0;
+}
